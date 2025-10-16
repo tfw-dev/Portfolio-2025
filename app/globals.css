@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+
+
+:root {
+  /* --background: #1B1B1B; */
+  --background: #E3E3E3;
+  --foreground: #000000;
+  --muted: #9F9F9F; /* ✅ Add this */
+
+
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --font-inter: Inter;
+  --text-tiny: 0.875rem;
+  --text-tiny--font-weight: 200;
+  --text-small: 0.875rem;
+  --text-small--font-weight: 300;
+  --text-small--letter-spacing: 0.13rem;
+  --text-small-desktop: 1rem;
+  --text-small-desktop--font-weight: 300;
+  --text-small-desktop--letter-spacing: 0.13rem;
+  --font-rodin-pro: var(--font-rodin-pro);
+  --font-along-sans-s2: var(--along-sans);
+  --font-barcode-tfb: var(--barcode-tfb);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F3F3F3;
+    --foreground: #0A0A0A;
+  }
+}
+
+html {
+    background: var(--background);
+
+    font-size: 14px;
+    font-weight: 200;
+
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+
+}
+
+
+
+/* the glass circle */
+  .glass-circle {
+    z-index: 100;
+    width: var(--size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    /* IMPORTANT: apply the SVG filter stack to the backdrop */
+    backdrop-filter:
+      url(#liquid-glass-new)
+      url(#fresnel)
+      drop-shadow(0 0 10px rgba(0,0,0,0.25));
+    /* for engines that don’t allow url() in backdrop-filter, provide a soft fallback */
+    -webkit-backdrop-filter: blur(14px) saturate(120%) contrast(0.95);
+    background: rgba(255,255,255,0.001); /* keep virtually transparent to define SourceGraphic silhouette */
+  }
+
+  /* subtle inner shine / fresnel helper (visual polish) */
+  .glass-circle::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background:
+      radial-gradient(120% 120% at 30% 25%, rgba(255,255,255,0.25), rgba(255,255,255,0) 55%),
+      radial-gradient(120% 120% at 70% 80%, rgba(0,0,0,0.25), rgba(0,0,0,0) 55%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  /* hide the defs holder */
+  body > svg {
+    position: absolute;
+    width: 0; height: 0;
+    opacity: 0; pointer-events: none;
+  }
