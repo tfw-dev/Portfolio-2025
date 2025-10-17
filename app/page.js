@@ -2,7 +2,7 @@
 "use client";
 import Hero from "./components/hero";
 import Services from "./components/services";
-import InteractiveGlobs from "./components/globs";
+import NewGlobs from "./components/new_globs";
 import Projects from "./components/projects";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -45,7 +45,7 @@ export default function Home() {
     <div className="font-sans">
       <div >
         <div className="sticky top-0 overflow-visible">
-          <InteractiveGlobs scaleProxy={scaleProxy}></InteractiveGlobs>
+          <NewGlobs scaleProxy={scaleProxy}></NewGlobs>
         </div>
         <Hero/>
         <Services></Services>

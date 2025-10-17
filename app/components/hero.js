@@ -1,4 +1,4 @@
-import InteractiveGlobs from "./globs"
+import InteractiveGlobs from "./rotating_globs"
 import GlassLens from "./glasslens"
 export default function Hero() {
     return (
