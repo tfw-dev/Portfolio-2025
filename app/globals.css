@@ -4,7 +4,7 @@
 
 :root {
   /* --background: #1B1B1B; */
-  --background: #E3E3E3;
+  --background: #F3F3F3;
   --foreground: #000000;
   --muted: #9F9F9F; /* ✅ Add this */
 
@@ -38,10 +38,8 @@
 
 html {
     background: var(--background);
-
     font-size: 14px;
-    font-weight: 200;
-
+    font-weight: 200; 
 }
 
 body {
@@ -79,11 +77,4 @@ body {
       radial-gradient(120% 120% at 70% 80%, rgba(0,0,0,0.25), rgba(0,0,0,0) 55%);
     mix-blend-mode: overlay;
     pointer-events: none;
-  }
-
-  /* hide the defs holder */
-  body > svg {
-    position: absolute;
-    width: 0; height: 0;
-    opacity: 0; pointer-events: none;
   }
