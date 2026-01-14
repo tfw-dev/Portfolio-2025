@@ -9,13 +9,10 @@ export function ScrollTimelineProvider({ children }) {
         hero: null,
         services: null
     });
-    const servicesTimeline = useRef(null);     
-    const scrollTriggerRef = useRef(null);       // optional ScrollTrigger
-    const progressValue = useRef(0);          // readable progress
 
     return (
     <ScrollTimelineContext.Provider
-      value={{ timelines, scrollTriggerRef, progressValue }}
+      value={{ timelines }}
     >
       {children}
     </ScrollTimelineContext.Provider>

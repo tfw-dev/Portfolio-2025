@@ -1,12 +1,13 @@
 // app/layout.jsx
 import localFont from 'next/font/local'
 import Link from 'next/link'
-import ModeToggle from './components/modetoggle'
 import { Inter } from 'next/font/google'
-import HeaderNav from './components/HeaderNav'
+import HeaderNav from './components/layout/Header'
+import Footer from './components/layout/Footer'
 import Contact from './components/Contact'
 import { ScrollTimelineProvider } from './context/TimelineContext'
-import './globals.css'
+import './styles/globals.css'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -46,6 +47,12 @@ const alongSansS2 = localFont({
   display: 'swap',
 })
 
+const Coolvetica = localFont({
+  src: '../public/fonts/Coolvetica_Rg.otf',
+  variable: '--coolvetica',
+  display: 'swap',
+})
+
 // In JS, don't type `metadata`
 export const metadata = {
   title: 'Create Next App',
@@ -60,14 +67,15 @@ export default function RootLayout({ children }) {
         <meta property="og:type" content="website" />
       </head>
       <body
-        className={`${inter.className} ${rodinPro.className} ${rodin.variable} ${alongSansS2.variable} ${BarcodeTFB.variable} antialiased`}
+        className={`${inter.className} ${rodinPro.className} ${rodin.variable} ${alongSansS2.variable} ${BarcodeTFB.variable} ${Coolvetica.variable} antialiased`}
       >
       <ScrollTimelineProvider>
         <HeaderNav></HeaderNav>
 
         <main>{children}</main>
     
-        <Contact />
+        <Footer></Footer>
+        {/* <Contact /> */}
         </ScrollTimelineProvider>
       </body>
     </html>

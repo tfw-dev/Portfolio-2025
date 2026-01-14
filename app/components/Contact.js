@@ -1,6 +1,6 @@
 
 import React from "react";
-import '../glass.css';
+import '../styles/glass.css';
 
 
 export default function Contact() {
