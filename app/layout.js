@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
 
         <main>{children}</main>
     
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
         {/* <Contact /> */}
         </ScrollTimelineProvider>
       </body>

@@ -13,8 +13,8 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function HeaderNav() {
   const { timelines } = useScrollTimeline();
 
-  // Fetch weather data (set API key in env variable or pass directly)
-  const weather = useWeather("Seattle", process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY);
+  // Fetch weather data from server-side API route (keeps API key private)
+  const weather = useWeather("Seattle");
 
   // Root wrapper so outside-click doesn't close when hitting the toggle button
   const rootRef = useRef(null);
