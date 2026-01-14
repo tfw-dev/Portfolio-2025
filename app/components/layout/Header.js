@@ -125,6 +125,7 @@ export default function HeaderNav() {
         </div> */}
            <div className="flex items-center  bot-15px ">
            {/* <div className="text-base">Taylor Ward</div> */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
                 src="/logos/TW_Logo_SVG.svg"
                 alt="Taylor Ward"

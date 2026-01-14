@@ -33,7 +33,7 @@ export default function Contact() {
         </svg>
          <footer id="contact" className="glassFooter w-full h-dvh rounded-t-full bottom-10 pointer-events-none">
           <div className="mx-auto w-1/2 text-center">
-            <h4 className="text-2xl font-bold pt-[200px]">LET'S WORK TOGETHER</h4>
+            <h4 className="text-2xl font-bold pt-[200px]">LET&apos;S WORK TOGETHER</h4>
             <span>taylor@taylorward@dev</span>
           </div>
         </footer>

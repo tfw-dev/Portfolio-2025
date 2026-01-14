@@ -429,7 +429,7 @@ export default function Canvas({
         }
       });
     };
-  }, [scaleProxy, motionProxy, cameraProxy]);
+  }, [scaleProxy, motionProxy, cameraProxy, containerRef]);
 
   return (
     <div
