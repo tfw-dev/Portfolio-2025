@@ -66,6 +66,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta property="og:type" content="website" />
+        <GoogleAnalytics gaId="G-M69QW2N1CY" />
       </head>
       <body
         className={`${inter.className} ${rodinPro.className} ${rodin.variable} ${alongSansS2.variable} ${BarcodeTFB.variable} ${Coolvetica.variable} antialiased`}
@@ -79,7 +80,6 @@ export default function RootLayout({ children }) {
         {/* <Contact /> */}
         </ScrollTimelineProvider>
       </body>
-      <GoogleAnalytics gaId="G-M69QW2N1CY" />
     </html>
   )
 }
