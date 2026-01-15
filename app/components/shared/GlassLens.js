@@ -13,7 +13,7 @@ export default function GlassLens({ size = 320, noiseDataUrl}) {
 
   return (
     <>
-      <svg >
+      <svg className="hidden">
         <filter id="frosted" primitiveUnits="objectBoundingBox">
           {noiseDataUrl ? (
             <feImage href={noiseDataUrl} x="0" y="0" width="1" height="1" result="map" preserveAspectRatio="none" />

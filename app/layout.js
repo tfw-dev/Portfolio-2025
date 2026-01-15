@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer'
 import Contact from './components/Contact'
 import { ScrollTimelineProvider } from './context/TimelineContext'
 import './styles/globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -78,6 +79,7 @@ export default function RootLayout({ children }) {
         {/* <Contact /> */}
         </ScrollTimelineProvider>
       </body>
+      <GoogleAnalytics gaId="G-M69QW2N1CY" />
     </html>
   )
 }
