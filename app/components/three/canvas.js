@@ -46,10 +46,12 @@ export default function Canvas({
     
     const motionConfig = {
       blobCount: 3,
-      center01: new THREE.Vector2(0.5, 0.5),
+      center01: new THREE.Vector2(0.5, 0.55),  // Shifted center up slightly
       ringRadius01: 0.12, roamRadius01: 0.18,  // Reduced from 0.16/0.26 to keep blobs within grid
       lerpXYRate: 0.55, lerpZRate: 0.5,
-      lissajous: { ampX: 0.13, ampY: 0.15, freqX: 0.35, freqY: 0.27, phase: Math.PI * 0.33 },  // Reduced amplitudes
+      lissajous: { ampX: 0.20, ampY: 0.12, freqX: 0.35, freqY: 0.27, phase: Math.PI * 0.33 },  // Increased X, reduced Y
+      yBias: 0.06,  // Upward bias to prevent downward clash
+      yMin: 0.35,   // Minimum Y position (prevents going too low)
       noise: 0.03, zCenter01: 0.5, zRange01: 0.04, zSpeed: 0.28,  // Small Z range with tight clamping
       phaseSeconds: { phase1: 8.0, phase2: 8.0, phase3: 8.0 },
       centralBall: { strength: 0.2, subtract: 40 }, // Higher subtract = tighter blob
@@ -268,7 +270,8 @@ export default function Canvas({
                 Math.sin(elapsedSeconds * motionConfig.lissajous.freqX + phaseOffset) * motionConfig.lissajous.ampX * movementScale;
               const targetY =
                 motionConfig.center01.y +
-                Math.cos(elapsedSeconds * motionConfig.lissajous.freqY + phaseOffset) * motionConfig.lissajous.ampY * movementScale;
+                Math.cos(elapsedSeconds * motionConfig.lissajous.freqY + phaseOffset) * motionConfig.lissajous.ampY * movementScale +
+                motionConfig.yBias;  // Apply upward bias
 
               state.target.set(targetX, targetY);
 
@@ -279,6 +282,9 @@ export default function Canvas({
 
               state.target.x += Math.sin((elapsedSeconds + state.seed) * 0.6) * motionConfig.noise;
               state.target.y += Math.cos((elapsedSeconds * 0.7 + state.seed)) * motionConfig.noise;
+
+              // Apply minimum Y constraint to prevent downward clash
+              state.target.y = Math.max(motionConfig.yMin, state.target.y);
 
               state.pos.lerp(state.target, 1 - Math.exp(-motionConfig.lerpXYRate * deltaSeconds));
 
@@ -301,7 +307,8 @@ export default function Canvas({
                 Math.sin(elapsedSeconds * motionConfig.lissajous.freqX + phaseOffset) * motionConfig.lissajous.ampX * movementScale;
               const targetY =
                 motionConfig.center01.y +
-                Math.cos(elapsedSeconds * motionConfig.lissajous.freqY + phaseOffset) * motionConfig.lissajous.ampY * movementScale;
+                Math.cos(elapsedSeconds * motionConfig.lissajous.freqY + phaseOffset) * motionConfig.lissajous.ampY * movementScale +
+                motionConfig.yBias;  // Apply upward bias
 
               state.target.set(targetX, targetY);
 
@@ -313,6 +320,9 @@ export default function Canvas({
 
               state.target.x += Math.sin((elapsedSeconds + state.seed) * 0.6) * motionConfig.noise;
               state.target.y += Math.cos((elapsedSeconds * 0.7 + state.seed)) * motionConfig.noise;
+
+              // Apply minimum Y constraint to prevent downward clash
+              state.target.y = Math.max(motionConfig.yMin, state.target.y);
 
               state.pos.lerp(state.target, 1 - Math.exp(-motionConfig.lerpXYRate * deltaSeconds));
 

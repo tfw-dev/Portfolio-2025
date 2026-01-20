@@ -129,7 +129,7 @@ export default function HeaderNav() {
             <img
                 src="/logos/TW_Logo_SVG.svg"
                 alt="Taylor Ward"
-                className="w-[70px] h-auto"
+                className="w-[60px] h-auto"
             />
 
         </div>
