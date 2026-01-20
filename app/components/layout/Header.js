@@ -136,11 +136,11 @@ export default function HeaderNav() {
         <div>
             <div className="flex items-center">
                 <div className="h-[11px] w-[11px] mr-3 rounded-full bg-[#a6e070] "></div>
-                <span className="text-base">Status: Open to work</span>
+                <span className="text-sm">Status: Open to work</span>
             </div>
-            <div className="flex items-center justify-end gap-1">
+            <div className="text-sm flex items-center justify-end gap-1">
               <span> Location: </span>
-                <div className="text-base">Seattle</div>
+                <div className="text-sm">Seattle</div>
                 {weather.loading ? (
                   <div className="relative left-1 text-sm max-w-[23px] whitespace-nowrap">--°</div>
                 ) : (
