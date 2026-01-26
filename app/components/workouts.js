@@ -1,10 +1,6 @@
-// app/components/Workouts.jsx (Server Component)
-export const dynamic = "force-dynamic"; // or keep fetch({ cache: "no-store" })
+export const dynamic = "force-dynamic"; 
 
-/**
- * Decode a Google/Strava encoded polyline into [lat, lng] pairs.
- * Strava uses 1e5 precision.
- */
+
 function decodePolylineString(encodedPolyline, precision = 1e5) {
   let currentIndex = 0;
   let latitudeTotal = 0;

@@ -5,7 +5,6 @@ import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import { ANIMATION_CONFIG, isAnimationEnabled } from '../config/scrollAnimations';
 
 gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
-
 export function useScrollAnimations(refs, options = {}) {
   const { enabled = true } = options;
 

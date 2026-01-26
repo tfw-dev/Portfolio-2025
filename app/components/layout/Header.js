@@ -15,15 +15,12 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function Header() {
   const { timelines } = useScrollTimeline();
 
-  // Fetch weather data from server-side API route (keeps API key private)
   const weather = useWeather("Seattle");
 
-  // Root wrapper so outside-click doesn't close when hitting the toggle button
   const rootRef = useRef(null);
   const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
 
-  // Close on Escape + outside click (only when open)
   useEffect(() => {
     if (!open) return;
 
@@ -74,7 +71,7 @@ export default function Header() {
     // Close menu after navigating
     setOpen(false);
   }
-//bg-gradient-to-b from-[#F3F3F3] from-0% to-[] to-60%
+  
   return (
     <header className=" fixed inset-x-0 p-b top-0 z-[100] pt-[40px] pb-[20px] px-[20px] sm:px-[90px]">
       <div ref={rootRef} className="flex  justify-between items-start">

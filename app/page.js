@@ -1,7 +1,5 @@
-// page.js
 "use client";
 import { useRef, useLayoutEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

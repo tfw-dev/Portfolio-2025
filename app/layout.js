@@ -56,7 +56,6 @@ export const metadata = {
   description: 'Crafting intentional, digital experiences through data-driven strategy, design, and development.',
 }
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -1,9 +1,5 @@
 import React from 'react';
 
-/**
- * Error boundary wrapper for safe component rendering
- * Prevents one broken component from crashing the entire page
- */
 class SafeWrapper extends React.Component {
   constructor(props) {
     super(props);

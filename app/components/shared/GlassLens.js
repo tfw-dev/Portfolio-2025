@@ -1,12 +1,6 @@
 import React from "react";
 import '../../styles/glass.css';
 
-/**
- * GlassCircle — single “liquid glass” circle using SVG filter pipeline.
- * Props:
- *   - size (number | string): width/height of the circle (default 320). Accepts px number or any CSS length.
- *   - className (string): optional extra classes.
- */
 export default function GlassLens({ size = 320, noiseDataUrl}) {
   const sizeStyle =
     typeof size === "number" ? `${size}px` : (size || "320px");

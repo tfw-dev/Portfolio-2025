@@ -1,8 +1,3 @@
-/**
- * Feature flags for enabling/disabling sections of the app
- * Makes it easy to turn off features without deleting code
- */
-
 export const FEATURES = {
   // Page sections
   CANVAS: true,

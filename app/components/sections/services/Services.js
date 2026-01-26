@@ -1,5 +1,3 @@
-// services.jsx
-
 import { Services } from "../../../data/services";
 
 export default function ServicesCarousel() {
