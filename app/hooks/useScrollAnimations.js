@@ -6,19 +6,6 @@ import { ANIMATION_CONFIG, isAnimationEnabled } from '../config/scrollAnimations
 
 gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
 
-/**
- * Custom hook for scroll-based animations
- * Handles hero, services, and portfolio scroll timelines
- *
- * @param {Object} refs - Object containing all necessary refs
- * @param {Object} refs.page - Main page container ref
- * @param {Object} refs.scaleProxy - Blob scale control ref
- * @param {Object} refs.motionProxy - Blob motion control ref
- * @param {Object} refs.cameraProxy - Camera control ref
- * @param {Object} refs.timelines - Timeline storage ref
- * @param {Object} options - Configuration options
- * @param {boolean} options.enabled - Enable/disable all animations
- */
 export function useScrollAnimations(refs, options = {}) {
   const { enabled = true } = options;
 

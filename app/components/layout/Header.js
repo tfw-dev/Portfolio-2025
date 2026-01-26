@@ -1,16 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
-import clsx from "clsx";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+// Context
 import { useScrollTimeline } from "../../context/TimelineContext";
+
+// Hooks
 import { useWeather } from "../../hooks/useWeather";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export default function HeaderNav() {
+export default function Header() {
   const { timelines } = useScrollTimeline();
 
   // Fetch weather data from server-side API route (keeps API key private)

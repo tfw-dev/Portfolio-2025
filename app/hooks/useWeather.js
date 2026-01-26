@@ -2,11 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-/**
- * Custom hook to fetch weather data for a given city via server-side API route
- * @param {string} city - City name (e.g., "Seattle")
- * @returns {object} { temp, icon, loading, error }
- */
 export function useWeather(city = "Seattle") {
   const [weather, setWeather] = useState({
     temp: null,

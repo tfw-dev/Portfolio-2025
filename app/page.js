@@ -214,14 +214,6 @@ export default function Home() {
           <Hero />
         </ConditionalRender>
 
-        {/* <Image
-          ref={logoRef}
-          src="/tw_logo.png"
-          alt="Taylor Ward"
-          className="fixed invert top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-          width={60}
-          height={20}
-        /> */}
         <div
         className="fixed invert top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-black"
         >Taylor Ward</div>
